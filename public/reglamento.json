@@ -1,0 +1,82 @@
+{
+  "titulo": "Reglamento del Aprendiz SENA",
+  "acuerdo": "Acuerdo 9 de 2024",
+  "capitulos": [
+    {
+      "id": 1,
+      "titulo": "Definiciones y Principios",
+      "articulos": [
+        {
+          "id": 1,
+          "nombre": "Definiciones",
+          "contenido": "Formación profesional integral, Comunidad educativa SENA, Aspirante, Aprendiz, Grupo."
+        },
+        {
+          "id": 3,
+          "nombre": "Principios Orientadores",
+          "contenido": [
+            "Autonomía",
+            "Dignidad",
+            "Inclusión",
+            "Enfoque diferencial",
+            "Enfoque territorial",
+            "Participación",
+            "Desarrollo sostenible",
+            "Solidaridad"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "Derechos del Aprendiz",
+      "articulo": 5,
+      "items": [
+        "Recibir una inducción integral sobre el reglamento y bienestar.",
+        "Recibir formación profesional integral de calidad.",
+        "Ser acreditado como aprendiz del SENA.",
+        "Tener a disposición la infraestructura y recursos necesarios para la formación.",
+        "Recibir oportunamente los elementos de protección personal.",
+        "Disfrutar de los beneficios del plan nacional integral de bienestar.",
+        "Recibir orientación humanista, ocupacional y actitudinal.",
+        "Ser reconocido sin discriminación (discapacidad, grupos étnicos, etc.).",
+        "Tener debido proceso en etapas administrativas y disciplinarias.",
+        "Ser notificado de novedades y calificaciones oportunamente.",
+        "Participar en el mejoramiento continuo de la formación."
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "Deberes del Aprendiz",
+      "articulo": 8,
+      "items": [
+        "Suscribir el acta de compromiso al matricularse.",
+        "Conocer y cumplir el reglamento del aprendiz.",
+        "Actuar bajo principios y valores institucionales.",
+        "Mantener actualizados los datos personales en los sistemas.",
+        "Asistir con puntualidad a las actividades de formación.",
+        "Cumplir con las actividades y evidencias según el cronograma.",
+        "Justificar inasistencias o incumplimientos debidamente.",
+        "Hacer uso apropiado de los ambientes y recursos del SENA.",
+        "Respetar derechos de autor en materiales y trabajos.",
+        "Portar el uniforme o prendas de trabajo adecuadamente.",
+        "Ingresar debidamente identificado a plataformas y sedes."
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "Prohibiciones",
+      "articulo": 9,
+      "items": [
+        "Aportar documentos falsos o información veraz.",
+        "Suplantar identidad en trámites o formación.",
+        "Plagiar materiales, trabajos o documentos.",
+        "Ingresar o consumir bebidas alcohólicas o sustancias psicoactivas.",
+        "Ingresar o portar armas de cualquier tipo.",
+        "Cometer delitos contra la comunidad educativa.",
+        "Destruir o dañar infraestructura o recursos del SENA.",
+        "Discriminar a cualquier miembro de la comunidad."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // 1. Global Safety Net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // 2. Reusable Helpers
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    // 3. Entity Validations
+    function isValidApprentice(data) {
+      return data.fullName is string && data.fullName.size() <= 100
+        && data.documentId is string && data.documentId.size() <= 20 && data.documentId.matches('^[0-9]+$')
+        && data.programName is string && data.programName.size() <= 150
+        && data.registeredAt == request.time;
+    }
+
+    function isValidResult(data) {
+      return data.apprenticeId is string && isValidId(data.apprenticeId)
+        && data.moduleId is string && data.moduleId.size() <= 50
+        && data.score is number && data.score >= 0
+        && data.totalQuestions is number && data.totalQuestions > 0
+        && data.score <= data.totalQuestions
+        && data.completedAt == request.time;
+    }
+
+    // 4. Matches
+    match /apprentices/{appId} {
+      allow get: if true; 
+      allow list: if request.auth.token.email == 'nurymindrey1970@gmail.com';
+      allow create: if isValidId(appId) && isValidApprentice(incoming());
+      allow update, delete: if false;
+    }
+
+    match /results/{resId} {
+      allow create: if isValidId(resId) 
+        && isValidResult(incoming())
+        && exists(/databases/$(database)/documents/apprentices/$(incoming().apprenticeId));
+      allow list, get: if request.auth.token.email == 'nurymindrey1970@gmail.com';
+      allow update, delete: if false;
+    }
+  }
+}

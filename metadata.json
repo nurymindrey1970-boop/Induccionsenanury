@@ -1,0 +1,8 @@
+{
+  "name": "SENA Inducción Pro",
+  "description": "Sistema integral de inducción pedagógica para aprendices SENA, diseñado bajo el modelo de Formación Profesional Integral.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

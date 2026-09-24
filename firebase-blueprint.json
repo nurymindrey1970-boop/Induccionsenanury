@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "Apprentice": {
+      "title": "Aprendiz",
+      "description": "Datos básicos del aprendiz que realiza la inducción.",
+      "type": "object",
+      "properties": {
+        "fullName": { "type": "string", "maxLength": 100 },
+        "documentId": { "type": "string", "maxLength": 20, "pattern": "^[0-9]+$" },
+        "programName": { "type": "string", "maxLength": 150 },
+        "registeredAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["fullName", "documentId", "programName", "registeredAt"]
+    },
+    "QuizResult": {
+      "title": "Resultado de Evaluación",
+      "description": "Registro de una evaluación completada por un aprendiz.",
+      "type": "object",
+      "properties": {
+        "apprenticeId": { "type": "string", "maxLength": 128 },
+        "moduleId": { "type": "string", "maxLength": 50 },
+        "score": { "type": "number" },
+        "totalQuestions": { "type": "number" },
+        "answers": { "type": "array" },
+        "completedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["apprenticeId", "moduleId", "score", "totalQuestions", "completedAt"]
+    }
+  },
+  "firestore": {
+    "/apprentices/{apprenticeId}": {
+      "schema": "Apprentice",
+      "description": "Colección de perfiles de aprendices."
+    },
+    "/results/{resultId}": {
+      "schema": "QuizResult",
+      "description": "Historial de resultados de las evaluaciones."
+    }
+  }
+}
